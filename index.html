@@ -8,28 +8,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
   font-family:'Poppins',sans-serif;
-  background:#0f172a;
-  color:#e5e7eb;
-  transition:.3s;
+  color:#0f172a;
+  line-height:1.7;
 }
 
-.light body{
-  background:white;
-  color:#111827;
+/* 🎨 UNIQUE CUSTOM BACKGROUND — handcrafted for you */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(1200px 500px at -10% -20%, #dbeafe, transparent),
+    radial-gradient(900px 400px at 120% 10%, #fce7f3, transparent),
+    linear-gradient(135deg,#eef2ff,#f1f5f9);
+  background-attachment:fixed;
 }
 
+/* HEADER */
 header{
   padding:18px 0;
+  background:#ffffffbb;
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #e2e8f0;
   position:sticky;
   top:0;
-  background:#020617d9;
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid #1f2937;
 }
 
 nav{
@@ -42,44 +49,34 @@ nav{
 }
 
 nav a{
-  color:#e5e7eb;
+  color:#0f172a;
   margin-left:15px;
   text-decoration:none;
   font-weight:500;
 }
 
-.toggle{
-  cursor:pointer;
-  border:1px solid #475569;
-  padding:6px 10px;
-  border-radius:20px;
-  color:#e5e7eb;
-}
-
+/* CONTAINER */
 .container{
   max-width:1000px;
   margin:40px auto;
   padding:0 20px;
 }
 
+/* HERO */
 .hero{
-  margin-top:40px;
+  margin-top:30px;
   animation:fade .8s ease-in;
 }
 
 @keyframes fade{
-  from{opacity:0;transform:translateY(20px)}
+  from{opacity:0;transform:translateY(15px)}
   to{opacity:1;transform:translateY(0)}
 }
 
 h1{
   font-size:42px;
-  color:#60a5fa;
+  color:#1f2937;
   margin-bottom:10px;
-}
-
-p{
-  line-height:1.7;
 }
 
 .btn{
@@ -87,24 +84,26 @@ p{
   padding:10px 18px;
   margin-top:15px;
   border-radius:8px;
-  border:1px solid #60a5fa;
-  color:#60a5fa;
+  border:1px solid #2563eb;
+  color:#2563eb;
   text-decoration:none;
   font-weight:600;
   transition:.2s;
 }
 
 .btn:hover{
-  background:#60a5fa;
-  color:#020617;
+  background:#2563eb;
+  color:white;
 }
 
+/* SECTIONS */
 .section-title{
   margin-top:40px;
   margin-bottom:10px;
-  color:#93c5fd;
+  color:#2563eb;
 }
 
+/* PROJECT CARDS */
 .projects{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -113,31 +112,31 @@ p{
 }
 
 .card{
-  background:#020617;
+  background:white;
   padding:18px;
   border-radius:14px;
-  border:1px solid #1f2937;
-  box-shadow:0 10px 28px rgba(0,0,0,.4);
-  transition:.3s;
+  border:1px solid #e5e7eb;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+  transition:.25s;
 }
 
 .card:hover{
   transform:translateY(-5px);
-  box-shadow:0 10px 30px rgba(0,0,0,.6);
+  box-shadow:0 16px 36px rgba(0,0,0,.12);
 }
 
 .card h3{
   margin-bottom:8px;
-  color:#bfdbfe;
+  color:#0f172a;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:25px;
-  color:#9ca3af;
+  color:#6b7280;
   margin-top:40px;
 }
-
 </style>
 </head>
 
@@ -153,8 +152,6 @@ footer{
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
-
-    <div class="toggle" onclick="toggleTheme()">🌙 Dark</div>
   </nav>
 </header>
 
@@ -162,6 +159,7 @@ footer{
 
   <section class="hero" id="about">
     <h1>Hi, I'm Siva 👋</h1>
+
     <p>B.Tech student in <strong>Artificial Intelligence & Machine Learning</strong>.<br>
     I build ML and Full-Stack applications using <strong>Python, Django, React & TensorFlow</strong>.
     Passionate about solving real-world problems and writing clean, efficient code.</p>
@@ -191,20 +189,18 @@ footer{
   </div>
 
   <h2 class="section-title" id="contact">📬 Contact</h2>
-  <p>Email: <strong>sivanellipudi99@gmail.com</strong></p>
-  <p>GitHub: <a href="https://github.com/SivaNellipudi">github.com/SivaNellipudi</a></p>
+
+  <p>
+    📧 <strong>sivanellipudi99@gmail.com</strong><br>
+    📞 <strong>+91&nbsp;9177224975</strong><br>
+    🔗 GitHub: <a href="https://github.com/SivaNellipudi">github.com/SivaNellipudi</a>
+  </p>
 
 </div>
 
 <footer>
   © 2025 — Built with ❤️ by Siva Nellipudi
 </footer>
-
-<script>
-function toggleTheme(){
-  document.body.classList.toggle("light");
-}
-</script>
 
 </body>
 </html>
